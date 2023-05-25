@@ -1,6 +1,13 @@
 const authorDiv = document.getElementById("author-div");
 const cryptoDiv = document.getElementById("crypto-div");
 const cryptoTopDiv = document.getElementById("crypto-top-div");
+const timeEl = document.getElementById("time");
+
+function getCurrentTime() {
+  const date = new Date();
+  const time = date.toLocaleTimeString("en-us", { timeStyle: "short" });
+  timeEl.textContent = time;
+}
 
 fetch(
   "https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature"
@@ -40,3 +47,5 @@ fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
     cryptoDiv.appendChild(price24HrLow);
   })
   .catch((err) => console.error(err));
+
+setInterval(getCurrentTime, 1000);
