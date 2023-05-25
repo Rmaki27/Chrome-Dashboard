@@ -32,6 +32,20 @@ main {
   justify-content: space-between;
 }
 
+.crypto-div {
+  display: flex;
+}
+
+.crypto-top-div {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+
+div#crypto-top-div > span {
+  margin-left: 0.5em;
+}
+
 .time {
   align-self: center;
 }

@@ -1,4 +1,6 @@
 const authorDiv = document.getElementById("author-div");
+const cryptoDiv = document.getElementById("crypto-div");
+const cryptoTopDiv = document.getElementById("crypto-top-div");
 
 fetch(
   "https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature"
@@ -21,5 +23,11 @@ fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
   .then((res) => res.json())
   .then((data) => {
     console.log(data);
+    const cryptoIcon = document.createElement("img");
+    const cryptoName = document.createElement("span");
+    cryptoIcon.src = data.image.small;
+    cryptoName.textContent = data.name;
+    cryptoTopDiv.appendChild(cryptoIcon);
+    cryptoTopDiv.appendChild(cryptoName);
   })
-  .catch(console.log("Yoooooo an error occured"));
+  .catch((err) => console.error(err));
