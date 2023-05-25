@@ -15,3 +15,19 @@ body {
   font-size: 2em;
   text-shadow: 1px 1px 2px #474747;
 }
+
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.time {
+  align-self: center;
+}
