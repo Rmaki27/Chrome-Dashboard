@@ -34,12 +34,16 @@ main {
 
 .crypto-div {
   display: flex;
+  flex-direction: column;
+}
+
+.crypto-div > p {
+  margin: 0;
 }
 
 .crypto-top-div {
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
 }
 
 div#crypto-top-div > span {
