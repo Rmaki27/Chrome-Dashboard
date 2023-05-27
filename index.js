@@ -39,9 +39,9 @@ fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
     let price24HrLow = document.createElement("p");
     cryptoIcon.src = data.image.small;
     cryptoName.textContent = data.name;
-    cryptoCurrentPrice.textContent = `🎯: $${data.market_data.current_price.usd}`;
-    price24HrHigh.textContent = `👆: $${data.market_data.high_24h.usd}`;
-    price24HrLow.textContent = `👇: $${data.market_data.low_24h.usd}`;
+    cryptoCurrentPrice.textContent = `Current Price: $${data.market_data.current_price.usd}`;
+    price24HrHigh.textContent = `24hr High: $${data.market_data.high_24h.usd}`;
+    price24HrLow.textContent = `24hr Low: $${data.market_data.low_24h.usd}`;
     cryptoTopDiv.appendChild(cryptoIcon);
     cryptoTopDiv.appendChild(cryptoName);
     cryptoDiv.appendChild(cryptoCurrentPrice);
