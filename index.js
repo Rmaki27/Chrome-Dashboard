@@ -2,6 +2,8 @@ const authorDiv = document.getElementById("author-div");
 const cryptoDiv = document.getElementById("crypto-div");
 const cryptoTopDiv = document.getElementById("crypto-top-div");
 const timeEl = document.getElementById("time");
+const weatherEl = document.getElementById("weather-div");
+const weatherTopEl = document.getElementById("weather-top-line");
 
 function getCurrentTime() {
   const date = new Date();
@@ -50,5 +52,30 @@ fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
 setInterval(getCurrentTime, 1000);
 
 navigator.geolocation.getCurrentPosition((position) => {
-  console.log(position.coords.latitude, position.coords.longitude);
+  const latitude = position.coords.latitude;
+  const longitude = position.coords.longitude;
+
+  fetch(
+    `https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial`
+  )
+    .then((res) => {
+      if (!res.ok) {
+        throw Error("Weather data not available");
+      }
+      return res.json();
+    })
+    .then((data) => {
+      console.log(data);
+      const weatherIcon = document.createElement("img");
+      const weather = document.createElement("p");
+      const location = document.createElement("p");
+      weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+      weather.textContent = `${data.main.temp}°F`;
+      console.log(weather);
+      location.textContent = `${data.name}`;
+      weatherTopEl.appendChild(weatherIcon);
+      weatherTopEl.appendChild(weather);
+      weatherEl.appendChild(location);
+    })
+    .catch((err) => console.error(err));
 });

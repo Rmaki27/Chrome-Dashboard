@@ -50,6 +50,10 @@ div#crypto-top-div > span {
   margin-left: 0.5em;
 }
 
+.weather-div {
+  display: flex;
+}
+
 .time {
   align-self: center;
 }
