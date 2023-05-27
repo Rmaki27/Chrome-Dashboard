@@ -29,7 +29,6 @@ fetch(
 fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
   .then((res) => res.json())
   .then((data) => {
-    console.log(data);
     const cryptoIcon = document.createElement("img");
     const cryptoName = document.createElement("p");
     let cryptoCurrentPrice = document.createElement("p");
@@ -49,3 +48,7 @@ fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
   .catch((err) => console.error(err));
 
 setInterval(getCurrentTime, 1000);
+
+navigator.geolocation.getCurrentPosition((position) => {
+  console.log(position.coords.latitude, position.coords.longitude);
+});
