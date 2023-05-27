@@ -19,6 +19,7 @@ fetch(
     document.body.style.backgroundImage = `url(${data.urls.full})`;
     const authorName = document.createElement("p");
     authorName.textContent = `By: ${data.user.name}`;
+    authorName.className = "author";
     authorDiv.appendChild(authorName);
   })
   .catch((err) => {
@@ -70,9 +71,10 @@ navigator.geolocation.getCurrentPosition((position) => {
       const weather = document.createElement("p");
       const location = document.createElement("p");
       weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-      weather.textContent = `${data.main.temp}°F`;
+      weather.textContent = `${Math.round(data.main.temp)}°F`;
       console.log(weather);
       location.textContent = `${data.name}`;
+      location.className = "location";
       weatherTopEl.appendChild(weatherIcon);
       weatherTopEl.appendChild(weather);
       weatherEl.appendChild(location);

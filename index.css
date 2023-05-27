@@ -35,25 +35,46 @@ main {
 .crypto-div {
   display: flex;
   flex-direction: column;
+  margin-top: 0.7em;
+  margin-left: 0.7em;
 }
 
 .crypto-div > p {
   margin: 0;
+  margin-bottom: 0.5em;
 }
 
 .crypto-top-div {
   display: flex;
   align-items: center;
+  margin-bottom: 0.5em;
+}
+
+.crypto-top-div > p {
+  margin-left: 0.5em;
+  font-size: 0.7em;
 }
 
 div#crypto-top-div > span {
   margin-left: 0.5em;
 }
 
-.weather-div {
+.weather-top-line {
   display: flex;
+  margin-right: 40px;
+}
+
+.location {
+  margin: 0;
+  font-size: 0.6em;
+  margin-top: -20px;
+  /* margin-right: 40px; */
 }
 
 .time {
   align-self: center;
+}
+
+.author {
+  margin: 0 0 0.7em 0.7em;
 }
