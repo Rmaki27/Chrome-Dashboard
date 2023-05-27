@@ -37,22 +37,23 @@ main {
   flex-direction: column;
   margin-top: 0.7em;
   margin-left: 0.7em;
+  font-size: 0.6em;
 }
 
 .crypto-div > p {
   margin: 0;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.8em;
+  margin-left: 0.1em;
 }
 
 .crypto-top-div {
   display: flex;
   align-items: center;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 
 .crypto-top-div > p {
-  margin-left: 0.5em;
-  font-size: 0.7em;
+  margin-left: 0.8em;
 }
 
 div#crypto-top-div > span {
@@ -68,7 +69,6 @@ div#crypto-top-div > span {
   margin: 0;
   font-size: 0.6em;
   margin-top: -20px;
-  /* margin-right: 40px; */
 }
 
 .time {
@@ -77,4 +77,5 @@ div#crypto-top-div > span {
 
 .author {
   margin: 0 0 0.7em 0.7em;
+  font-size: 0.6em;
 }
